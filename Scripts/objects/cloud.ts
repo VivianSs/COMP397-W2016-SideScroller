@@ -1,20 +1,20 @@
 module objects {
-    // OCEAN class +++++++++++++++++++++++++++++++++++
-    export class Island extends objects.GameObjetcs {
+    // CLOUD class +++++++++++++++++++++++++++++++++++
+    export class Cloud extends objects.GameObjetcs {
         //private instance variables
 
 
         // constructor ++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
-            super(("island"));
+            super(("cloud"));
 
-            this._speed.y = 5;// island speed
+
             this._reset(this._topBounds);
         }
 
         // private methods+++++++++++++++++++++++++++++++++++++++++
         protected _checkBounds(value: number): void {
-            //check to see if the top of the island 
+            //check to see if the top of the cloud 
             // has outside the viewport
 
             if (this.y >= value) {
@@ -22,8 +22,10 @@ module objects {
             }
         }
 
-        // reset the island offscreen
+        // reset the cloud offscreen
         protected _reset(value: number): void {
+            this._speed.y = Math.floor(Math.random() * 5) + 5;
+            this._speed.x = Math.floor(Math.random() * 4) - 2;
            
             this.y = value;
             this.x = Math.floor(Math.random() * this._rightBounds) + this._leftBounds;
@@ -31,8 +33,9 @@ module objects {
 
         public update(): void {
 
-            //scroll the island 5 px per frame
+            //scroll the cloud down the sceen
             this.y += this._speed.y;
+            this.x += this._speed.x;
             this._checkBounds(this._bottomBounds);
         }
     }

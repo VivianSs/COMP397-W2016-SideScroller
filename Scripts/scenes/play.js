@@ -18,9 +18,12 @@ var scenes;
             //added ocean to the scene
             this._ocean = new objects.Ocean();
             this.addChild(this._ocean);
-            //added island to the scene;
+            //added island to the scene
             this._island = new objects.Island();
             this.addChild(this._island);
+            //added cloud to the scene
+            this._cloud = new objects.Cloud();
+            this.addChild(this._cloud);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -28,6 +31,7 @@ var scenes;
         Play.prototype.update = function () {
             this._ocean.update();
             this._island.update();
+            this._cloud.update();
         };
         return Play;
     })(objects.Scene);
