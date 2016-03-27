@@ -28,10 +28,10 @@ module objects {
         }
         
         public update(): void{
-            var boundValue:number=0;
+          
             //scroll the ocean 5 px per frame
             this.y += this._speed.y;
-            this._checkBounds(boundValue);
+            this._checkBounds(0);
         }
     }
 }

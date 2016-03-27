@@ -5,13 +5,19 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // GameObjetcs class +++++++++++++++++++++++++++++++++++
+    // GameObjetcs super class +++++++++++++++++++++++++++++++++++
     var GameObjetcs = (function (_super) {
         __extends(GameObjetcs, _super);
         // constructor ++++++++++++++++++++++++++++++++++++++++++++
         function GameObjetcs(bitmapString) {
             _super.call(this, assets.getResult(bitmapString));
-            this._speed = new createjs.Point(0, 0); // ocean speed
+            this._speed = new createjs.Point(0, 0);
+            this._width = this.getBounds().width;
+            this._hight = this.getBounds().height;
+            this._topBounds = -this._hight;
+            this._bottomBounds = config.Screen.HEIGHT + this._hight;
+            this._leftBounds = 0;
+            this._rightBounds = config.Screen.WIDTH - this._width;
         }
         // private methods+++++++++++++++++++++++++++++++++++++++++
         GameObjetcs.prototype._checkBounds = function (value) {

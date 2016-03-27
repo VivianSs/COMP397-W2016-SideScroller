@@ -19,7 +19,6 @@ var objects;
         Ocean.prototype._checkBounds = function (value) {
             //check to see if the top of the ocean 
             // has met the top of the scene
-            console.log(this.y);
             if (this.y >= value) {
                 this._reset(-960);
             }
@@ -29,10 +28,9 @@ var objects;
             this.y = value;
         };
         Ocean.prototype.update = function () {
-            var boundValue = 0;
             //scroll the ocean 5 px per frame
             this.y += this._speed.y;
-            this._checkBounds(boundValue);
+            this._checkBounds(0);
         };
         return Ocean;
     })(objects.GameObjetcs);
