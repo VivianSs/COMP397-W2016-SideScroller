@@ -16,6 +16,7 @@ module objects {
         protected _checkBounds(value:number):void {
             //check to see if the top of the ocean 
             // has met the top of the scene
+           
             if(this.y >= value){
                 this._reset(-960);
             }
@@ -27,7 +28,7 @@ module objects {
         }
         
         public update(): void{
-            var boundValue:number;
+            var boundValue:number=0;
             //scroll the ocean 5 px per frame
             this.y += this._speed.y;
             this._checkBounds(boundValue);

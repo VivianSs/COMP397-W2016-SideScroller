@@ -3,7 +3,7 @@ module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _ocean: objects.Ocean;
-        private _dx: number;
+      
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
