@@ -13,6 +13,7 @@ var objects;
         function Cloud() {
             _super.call(this, ("cloud"));
             this._reset(this._topBounds);
+            this.name = "cloud";
         }
         // private methods+++++++++++++++++++++++++++++++++++++++++
         Cloud.prototype._checkBounds = function (value) {

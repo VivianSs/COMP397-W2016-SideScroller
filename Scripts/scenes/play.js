@@ -33,22 +33,22 @@ var scenes;
                 this._clouds[cloud] = new objects.Cloud();
                 this.addChild(this._clouds[cloud]);
             }
+            // adder collision manager to the scene
+            this._collision = new managers.Collision(this._player);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
+            var _this = this;
             this._ocean.update();
             this._island.update();
             this._player.update();
-            /*  for(var cloud in this._clouds)
-              {
-                  this._clouds[cloud].update();
-              }
-             */
             this._clouds.forEach(function (cloud) {
                 cloud.update();
+                _this._collision.check(cloud);
             });
+            this._collision.check(this._island);
         };
         return Play;
     })(objects.Scene);

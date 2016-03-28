@@ -7,9 +7,8 @@ module objects {
         // constructor ++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
             super(("cloud"));
-
-
             this._reset(this._topBounds);
+            this.name = "cloud";
         }
 
         // private methods+++++++++++++++++++++++++++++++++++++++++
