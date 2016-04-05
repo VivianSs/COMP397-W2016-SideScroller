@@ -14,6 +14,7 @@ var objects;
             this._speed = new createjs.Point(0, 0);
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
+            this.isColliding = false;
             this.centerX = this.width * 0.5;
             this.centerY = this.height * 0.5;
             this._topBounds = -this.height;

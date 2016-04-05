@@ -14,6 +14,7 @@ var objects;
             _super.call(this, ("cloud"));
             this._reset(this._topBounds);
             this.name = "cloud";
+            this.soundString = "thunder";
         }
         // private methods+++++++++++++++++++++++++++++++++++++++++
         Cloud.prototype._checkBounds = function (value) {

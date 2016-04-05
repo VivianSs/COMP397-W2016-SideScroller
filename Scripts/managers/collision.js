@@ -21,14 +21,30 @@ var managers;
             // check if the distance between the player and th eother object is less 
             // than the minimum distance
             if (this.distance(startPoint, endPoint) < minDistance) {
-                //check if it's an island hit
-                if (object.name === "island") {
-                    console.log("island hit!");
+                if (!object.isColliding) {
+                    //check if it's an island hit
+                    if (object.name === "island") {
+                        createjs.Sound.play("yay");
+                        scoreValue += 100; //award 100 points
+                    }
+                    //check if it's a cloud hit
+                    if (object.name === "cloud") {
+                        createjs.Sound.play("thunder");
+                        liveValue--; // lose a life
+                        // check if player has no more lives
+                        if (liveValue <= 0) {
+                            // turn off the engine sound
+                            this._player.engineSound.stop();
+                            // show the game over scene
+                            scene = config.Scene.END;
+                            changeScene();
+                        }
+                    }
+                    object.isColliding = true;
                 }
-                //check if it's a cloud hit
-                if (object.name === "cloud") {
-                    console.log("cloud hit");
-                }
+            }
+            else {
+                object.isColliding = false;
             }
         };
         return Collision;

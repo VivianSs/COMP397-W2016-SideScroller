@@ -13,6 +13,9 @@ var scene: number;
 var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
+var scoreValue:number;
+var liveValue:number;
+var highScoreValue:number = 0;
 
 var assetData:objects.Asset[] = [
     // Add your Assets here
@@ -23,6 +26,9 @@ var assetData:objects.Asset[] = [
     {id: "plane", src:"../../Assets/images/plane.png"},
     {id: "island", src:"../../Assets/images/island.png"},
     {id: "cloud", src:"../../Assets/images/cloud.png"},
+    {id: "engine", src:"../../Assets/audio/engine.ogg"},
+    {id: "thunder", src:"../../Assets/audio/thunder.ogg"},
+    {id: "yay", src:"../../Assets/audio/yay.ogg"}
 ];
 
 function preload() {

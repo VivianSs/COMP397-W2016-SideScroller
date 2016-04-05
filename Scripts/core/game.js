@@ -10,6 +10,9 @@ var scene;
 var menu;
 var play;
 var end;
+var scoreValue;
+var liveValue;
+var highScoreValue = 0;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
@@ -19,6 +22,9 @@ var assetData = [
     { id: "plane", src: "../../Assets/images/plane.png" },
     { id: "island", src: "../../Assets/images/island.png" },
     { id: "cloud", src: "../../Assets/images/cloud.png" },
+    { id: "engine", src: "../../Assets/audio/engine.ogg" },
+    { id: "thunder", src: "../../Assets/audio/thunder.ogg" },
+    { id: "yay", src: "../../Assets/audio/yay.ogg" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
